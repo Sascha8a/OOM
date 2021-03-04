@@ -1,0 +1,26 @@
+@startuml Aufgabe 2 a)
+
+skinparam classAttributeIconSize 0
+
+abstract class Tier {
+    +bezeichnung: String
+    +gefährlich: boolean
+}
+
+abstract class Säugetier extends Tier {
+    +anzahlJungen: int
+}
+
+class Fleischfresser extends Säugetier {
+    +mengeFleisch: int
+}
+
+class Pflanzenfresser extends Säugetier {
+    +wiederkäuer: boolean
+}
+
+class Aasfresser extends Fleischfresser {
+    +flügel: boolean
+}
+
+@enduml

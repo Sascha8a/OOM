@@ -1,0 +1,10 @@
+@startuml Aufgabe 2 b2)
+
+skinparam classAttributeIconSize 0
+
+object "Max: Customer" as max
+object "CheckingAccount: BankAccount" as checkings
+
+max <--> checkings: "owns"
+
+@enduml

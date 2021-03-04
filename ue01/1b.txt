@@ -1,0 +1,8 @@
+## Was ist ein Objekt?
+Instanz einer Klasse
+
+## Notation eines Objektes
+Ähnlich dem Klassendiagramm, muss nicht vollständig sein.
+
+## Unterschied 1:1, 1:n, n:m?
+Anhand der Relationen zwischend den Objekten.

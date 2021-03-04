@@ -1,0 +1,26 @@
+@startuml Aufgabe 1 a)
+
+skinparam classAttributeIconSize 0
+
+class Customer {
+    +name: String
+    +address: Address
+    +dob: Date
+    /branch: String = getClosestBranch(address)
+    delete(): void
+    {static} create(String, Address, Date): Customer
+    {static} find(String, Address, Date): Customer
+}
+
+class BankAccount {
+    identifier: int
+    label: String
+    creationDate: Date = now()
+    create(Customer, String):  BankAccount
+    close(): void
+    {static} numAccounts: int
+}
+
+Customer "1" *-- "*" BankAccount: has >
+
+@enduml

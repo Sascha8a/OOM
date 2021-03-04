@@ -1,0 +1,17 @@
+@startuml Aufgabe 2 b2)
+
+skinparam classAttributeIconSize 0
+
+object "Alice: Customer" as alice
+object "Bob: Customer" as bob
+
+object "CheckingAccount 1: BankAccount" as checking
+object "SavingAccount 1: BankAccount" as saving
+
+object "SavingAccount 2: BankAccount" as saving2
+
+alice <--> checking: "owns"
+alice <--> saving: "owns"
+bob <--> saving2: "owns"
+
+@enduml

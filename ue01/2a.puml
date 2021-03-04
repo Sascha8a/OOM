@@ -1,0 +1,22 @@
+@startuml Aufgabe 2 a)
+
+skinparam classAttributeIconSize 0
+
+class Haus {
+    +bezeichnung: String
+    +adresse: Adresse
+}
+
+class Wohnung {
+    +türnummer: int
+    +vermietet: boolean
+}
+
+class Küche {
+    +produktionsjahr: int
+}
+
+Haus "1" *-- "1..*" Wohnung
+Wohnung "0..1" o-- "0..1"  Küche
+
+@enduml
