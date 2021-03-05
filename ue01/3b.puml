@@ -3,23 +3,23 @@
 skinparam classAttributeIconSize 0
 
 class Kunde {
-    name: String
-    adresse: Adresse
+    +name: String
+    +adresse: Adresse
 }
 
 class Veranstaltung {
-    titel: String
-    datum: Date
-    ort: String
+    +titel: String
+    +datum: Date
+    +ort: String
 }
 
 class Buchung {
-    nummer: int
-    datum: Date
-    bezahlt: boolean
+    +nummer: int
+    +datum: Date
+    +bezahlt: boolean
 }
 
-Kunde "0..*" - "0..*" Veranstaltung
+Kunde "0..*" - "0..*" Veranstaltung: besucht >
 (Kunde, Veranstaltung) .. Buchung
 
 @enduml

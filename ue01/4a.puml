@@ -1,0 +1,20 @@
+@startuml Aufgabe 4 a)
+
+skinparam classAttributeIconSize 0
+
+class Firma {
+    +uid: String
+    +name: String
+    +geschäftsführer: Employee
+}
+
+class Abteilung {
+    +name: String
+    +leiter: Employee
+}
+
+Firma "1" *-- "0..*" Abteilung: besteht aus >
+
+Abteilung "+parent 0..1" *-- "0..*" Abteilung: unterliegt <
+
+@enduml

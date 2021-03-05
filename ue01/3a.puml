@@ -18,5 +18,5 @@ enum TicketTyp {
     Economy
 }
 
-Flugticket --> "+ passagier 1" Person
+Flugticket --> "+ passagier 1" Person: bucht <
 @enduml

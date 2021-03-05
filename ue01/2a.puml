@@ -16,7 +16,7 @@ class Küche {
     +produktionsjahr: int
 }
 
-Haus "1" *-- "1..*" Wohnung
-Wohnung "0..1" o-- "0..1"  Küche
+Haus "1" *-- "1..*" Wohnung: besteht aus >
+Wohnung "0..1" o-- "0..1"  Küche: hat >
 
 @enduml

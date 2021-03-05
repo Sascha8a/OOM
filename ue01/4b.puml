@@ -1,0 +1,33 @@
+@startuml Aufgabe 4 b)
+
+skinparam classAttributeIconSize 0
+
+class Film {
+    +name: String
+    +länge: int
+}
+
+class Schauspieler {
+    +name: String
+    +bollywood: boolean
+}
+
+class Rolle {
+    +bezeichnung: String
+}
+
+
+<> diamond
+Rolle "*" -- diamond
+diamond -- "+film *" Film
+diamond -- "+protagonist *" Schauspieler
+
+class Gage {
+    höhe: int
+}
+
+Schauspieler "0..*" - "0..*" Film: spielt mit >
+(Schauspieler, Film) .. Gage
+
+
+@enduml

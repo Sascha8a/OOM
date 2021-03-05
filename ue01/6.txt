@@ -1,0 +1,64 @@
+## Ein Objekt von A kann mit sich selbst in Beziehung stehen.
+Richtig 
+B steht mit sich selbst im Beziehung, dadurch steht auch A mit sich selbst in Beziehung
+
+## Ein Objekt von B kann auf die Variable x zugreifen.
+Richtig
+Visibility "#" bedeutet protected. "Only this class and any subclasses may access the method/property."
+
+## Ein Objekt von D ist in genau einem Objekt von B enthalten.
+Richtig
+Kartinalität "1" und Starke Aggregation
+
+## Drei Objekte von C stehen mit vier Objekten von D in Beziehung.
+Falsch
+Ein C steht mit genau 4 D in Beziehung
+Ein D steht mit genau 3 C in Beziehung
+
+## Ein Objekt von A muss in Beziehung zu mindestens einem Objekt von D stehen.
+Richtig
+A implementiert B
+B steht mit 1..* Objekten von D in Beziehung
+
+## Ein Objekt von F steht in Beziehung zu mindestens einem Objekt von H.
+Falsch
+Kadinalität * bzw. 0..*
+Schwache Aggregation
+
+## Ein Objekt von F kann in Beziehung zu einem Objekt von H stehen, muss aber nicht.
+Richtig
+Kadinalität * bzw. 0..*
+
+## Ein Objekt von A kann direkt auf die Variable x zugreifen.
+Richtig
+Visibility "#" bedeutet protected. "Only this class and any subclasses may access the method/property."
+
+## Im System können mehr G als E enthalten sein.
+Falsch
+Ojekte von E können unabhängig existieren und müssen keine Beziehungen haben.
+
+## Ein Objekt von A steht in Beziehung zu genau zwei Objekten von C und die Beziehung kann von A aus navigiert werden.
+Richtig
+Kadinalität "2" und ->
+
+## Eine Instanz von C kann auf die Variable y zugreifen.
+Richtig
+Visibility "+" bedeutet public
+
+## Die Raute bei B wird als Komposition bezeichnet.
+Richtig
+Starke Aggregation = Komposition
+
+## Wenn eine Instanz von F gelöscht wird, werden alle enthaltenen Instanzen von H gelöscht.
+Falsch
+Schwache Aggregation
+
+## Ein Objekt von F steht in Beziehung zu genau einem Objekt von C und bis zu drei Objekten von E.
+Falsch
+XOR
+Entweder: Genau ein C
+Oder: Ein bis Drei E
+
+## Ein Objekt von D steht in Beziehung zu genau einer direkten Instanz von B.
+Falsch
+B kann nicht instanziert werden, da abstract

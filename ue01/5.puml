@@ -1,0 +1,69 @@
+@startuml Aufgabe 5
+
+skinparam classAttributeIconSize 0
+
+enum Automarke {
+    VW
+    KIA
+    BMW
+}
+
+class Verleihfirma {
+    +bez: String
+    +adresse: String
+}
+
+class Mietauto {
+    +kennzeichen: String
+}
+
+class Kunde {
+    +name: String
+    +adresse: String
+    +stammkunde: boolean
+}
+
+class Geschäftskunde extends Kunde {
+    +firma: String
+    +vergünstigt: Automarke
+}
+
+class Werkstatt {
+    +bez: String
+    +reifenservice: boolean
+}
+
+class Besitzer {
+    +name: String
+    +gebDat: Date
+}
+
+class Vermietung {
+    +datum: Date
+    +dauer: int
+}
+
+Verleihfirma "1" - "*" Mietauto: besitzt >
+Mietauto "*" -- "1" Werkstatt: besitzt <
+note "{XOR}" as xor
+Verleihfirma . xor
+xor . Werkstatt 
+
+
+Werkstatt "1..*" - "1" Besitzer: besitzt <
+
+Mietauto "0..*" - "0..*" Kunde: mietet <
+
+(Kunde, Mietauto) . Vermietung
+
+
+@enduml
+
+
+1. Visibility fehlt
+2. Kunde nicht abstract, da es Kunden gibt, die keine G-Kunden sind.
+3. Stammkunde => boolean
+4. billiger => vergünstigt + enum
+5. Mietauto datum + dauer => Relation
+6. Verleihfirma: +adresse
+7. Werkstatt hat EINEN Besitzer
