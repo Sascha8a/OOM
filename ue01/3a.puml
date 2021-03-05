@@ -1,0 +1,22 @@
+@startuml Aufgabe 3 a)
+
+skinparam classAttributeIconSize 0
+
+class Person {
+    +name: String
+    +passnummer: String
+}
+
+class Flugticket {
+    +ticketnummer: String
+    +ticketArt: TicketTyp
+}
+
+enum TicketTyp {
+    Business
+    Premium Economy
+    Economy
+}
+
+Flugticket --> "+ passagier 1" Person
+@enduml

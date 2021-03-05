@@ -1,0 +1,25 @@
+@startuml Aufgabe 3 b)
+
+skinparam classAttributeIconSize 0
+
+class Kunde {
+    name: String
+    adresse: Adresse
+}
+
+class Veranstaltung {
+    titel: String
+    datum: Date
+    ort: String
+}
+
+class Buchung {
+    nummer: int
+    datum: Date
+    bezahlt: boolean
+}
+
+Kunde "0..*" - "0..*" Veranstaltung
+(Kunde, Veranstaltung) .. Buchung
+
+@enduml
