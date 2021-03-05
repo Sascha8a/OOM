@@ -1,0 +1,1 @@
+Diese Ausarbeitung ist enthält Fehler. Kopieren lohnt sich nicht (und ist nicht erwünscht)!
