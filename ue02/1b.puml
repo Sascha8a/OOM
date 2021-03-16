@@ -1,0 +1,23 @@
+@startuml 1b
+
+skinparam classAttributeIconSize 0
+
+class C {}
+class D {}
+class E {}
+class F {}
+
+C "1" -- "0..*" E: x
+
+E "1" -- "1" D: w
+
+E "1" -- "2 +h" F: y
+
+F "0..1" --> "0..1" F: z
+
+note "{XOR}" as xor
+D . xor
+xor . F 
+
+
+@enduml

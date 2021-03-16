@@ -1,0 +1,66 @@
+@startuml 4
+
+skinparam classAttributeIconSize 0
+
+abstract class Mensch {
+    name
+    geburtsdatum
+}
+
+class Ritter extends Mensch {
+    adelig
+}
+
+class Bauer extends Mensch {
+    unfrei
+}
+
+class Burg {
+    name
+    adresse
+}
+
+enum FeldTyp {
+    Kartoffeln
+    Weizen
+    Hafer
+}
+
+class Feld {
+    typ: FeldTyp
+}
+
+class Ernte {
+    menge
+    datum
+}
+
+class Haus {
+    name
+    adresse
+}
+
+class Bauernhof extends Haus {
+    tiere
+}
+
+Burg "1..*" -- "1" Ritter: besitzt <
+Burg "1" -- "0..*" Ritter: bewohnt <
+
+Ritter "1" -- "1.*" Feld: besitzt >
+
+<> diamond
+Feld "1" -- diamond
+diamond -- "0..*" Ernte
+diamond -- "0..*" Bauer
+
+Bauer -- Haus: wohnt in >
+Bauer -- Bauernhof: wohnt in >
+
+note "{XOR}" as xor
+(Bauer, Haus) . xor
+(Bauer, Bauernhof) . xor
+
+
+
+@enduml

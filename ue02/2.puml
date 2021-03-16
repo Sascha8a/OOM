@@ -1,0 +1,17 @@
+@startuml 2
+
+skinparam classAttributeIconSize 0
+
+class A {}
+class B {}
+class C {}
+class D {}
+class E {}
+
+A "1" -- "1" B: "y"
+
+B "1" -- "1..3" C: x
+
+
+
+@enduml

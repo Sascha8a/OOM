@@ -1,0 +1,50 @@
+@startuml 3
+
+skinparam classAttributeIconSize 0
+
+abstract class Fahrzeug {
+    -kennz: String
+    -bez: String
+}
+
+Fahrzeug "0..* -owner" -- "1 +mine" Besitzer
+Besitzer "1 -hf" -- "1 -owner" Fahrzeug
+
+class SonderFZ extends Fahrzeug {
+    -blaulicht: boolean
+    -sirene: boolean
+}
+
+enum Typ {
+    probefahrt
+    ausflug
+    fun
+}
+
+enum Zweck {
+    privat
+    beruflich
+}
+
+class Besitzer {
+    +zul: String
+    +mine: Fahrzeug[]
+    -hf: Fahrzeug
+}
+
+class Fahrer {
+    -name: String
+    -zweck: Zweck
+    -tour: Hashtable
+    -hf: Fahrzeug
+    
+    +getName(): String
+    +setName(String): void
+}
+
+Fahrer "-hf" ->  "1" Fahrzeug
+Fahrer "-tour" --> "0..* {unique}" Fahrzeug
+
+(Fahrer, Fahrzeug) . Typ
+
+@enduml
